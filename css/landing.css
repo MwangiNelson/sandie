@@ -475,7 +475,7 @@ table {
 }
 .sign-up {
   margin-top: 12vh;
-  display: none;
+  display: inline-flex;
   width: 50%;
   height: fit-content;
   background-color: #332614ad;
