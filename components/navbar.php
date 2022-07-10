@@ -11,7 +11,7 @@
         <ul>
             <li><a href="store.php"><button class="btn btn-light cart-btn"><i class="fa-solid fa-store px-2"></i>STORE</button></a></li>
             <li><a href="cart.php"><button class="btn btn-light cart-btn"><i class="fa-solid fa-cart-shopping px-2"></i>Cart</button></a></li>
-            <li><button class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket px-1"></i>SIGN IN</button></li>
+            <li><a href="login.php"><button class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket px-1"></i>SIGN IN</button></a></li>
         </ul>
     </div>
 </nav>

@@ -463,3 +463,50 @@ table {
   background-color: #f0eadc;
   margin-inline: 3vw;
 }
+
+.auth-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f0eadc;
+  height: fit-content;
+  display: inline-flex;
+  border-bottom: 2px solid #725229;
+}
+.sign-up {
+  margin-top: 12vh;
+  display: none;
+  width: 50%;
+  height: fit-content;
+  background-color: #332614ad;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+.sign-in {
+  width: 50%;
+  height: fit-content;
+  background-color: #332614ad;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-body {
+  font-family: "Dosis", sans-serif;
+  color: #f0eadc;
+}
+.sign-in-form {
+  width: 100%;
+  padding-inline: 3rem;
+}
+.toggle-options {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-options button {
+  color: #1da1f2;
+  border-radius: 0;
+}
