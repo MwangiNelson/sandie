@@ -25,11 +25,7 @@ $session = session_start();
 
 <body>
     <div class="auth-body">
-        <nav class="auth-nav">
-            <div class="logo-container">
-                <a href="landing.php"> <img src="images/SandyBEST_logo.png" alt=""> </a>
-            </div>
-        </nav>
+        <?php include("components/navbar_sp.php"); ?>
         <div class="sign-up" id="sign-up">
             <div class="checkout-head py-3">
                 <h2>Sign Up</h2>

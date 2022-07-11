@@ -15,10 +15,9 @@ function verifyUser($varEmail, $varPassword)
     $dbuser = "root";
     $dbpass = "";
     $dbname = "sandybest";
-    $dbport = "3306";
-    $conn = new mysqli($dbserver, $dbuser, $dbpass, $dbname, $dbport);
+    $conn = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
-    $sql = "SELECT * FROM tbl_user where email = '" . $varEmail . "'";
+    $sql = "SELECT * FROM tbl_users where user_email = '" . $varEmail . "'";
     $result = $conn->query($sql);
     if (mysqli_num_rows($result) != 0) {
         while ($res = mysqli_fetch_array($result)) {
@@ -29,8 +28,8 @@ function verifyUser($varEmail, $varPassword)
                 $varRoleID = $res['user_role'];
 
                 //assigning session variables values to be used when tracking user activities in-app
-                $_SESSION['userRoleID'] = $res['user_role']; //assigning role id
-                $_SESSION['userID'] = $res['user_id']; //assigning username
+                $_SESSION['user_role_id'] = $res['user_role']; //assigning role id
+                $_SESSION['user_id'] = $res['user_id']; //assigning username
 
                 //checking the user role to direct them to their designated page 
                 $sql2 = "SELECT * FROM tbl_roles where role_id = '" . $varRoleID . "'";
@@ -44,7 +43,7 @@ function verifyUser($varEmail, $varPassword)
 
                         //if the user role is '1' thats a user_CLIENT atapelekwa home page
                         if ($res2['role_name'] == 'User_CLIENT') {
-                            $_SESSION['user_name'] = $res['user_name'];
+                            $_SESSION['user_name'] = $res['users_name'];
                             echo ("<script>
 									window.location.href='landing.php';
 									alert('Login Successful.');

@@ -6,6 +6,7 @@ $session = session_start();
 <html lang="en">
 
 <head>
+
     <?php include("components/header.php"); ?>
 </head>
 
@@ -84,7 +85,17 @@ $session = session_start();
     </div>
     <?php include("components/footer.php"); ?>
 
-    <script src="js/main.js"></script>
+    <script>
+        var open_mod = document.getElementById("pane");
+
+        function close_log() {
+            open_mod.style.display = "none";
+        }
+
+        function open_log() {
+            open_mod.style.display = "inline-flex";
+        }
+    </script>
 </body>
 
 </html>

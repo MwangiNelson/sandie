@@ -510,3 +510,102 @@ table {
   color: #1da1f2;
   border-radius: 0;
 }
+
+.admin-container {
+  width: 100%;
+  height: fit-content;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.head-admin {
+  margin-top: 10vh;
+  font-family: "Dosis", sans-serif;
+}
+.display {
+  background-color: #332614b7;
+  width: 90%;
+  height: fit-content;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.admin-options {
+  width: 20%;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.797);
+  border-radius: 5px;
+  color: #f0eadc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-options ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+}
+.admin-options li {
+  padding: 1rem;
+  color: #f0eadc;
+}
+.admin-options button {
+  color: #f0eadc;
+  width: 100%;
+}
+.panel {
+  width: 78%;
+  background-color: rgba(0, 0, 0, 0.797);
+  height: fit-content;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f0eadc;
+}
+.panel-actions {
+  width: 100%;
+  padding: 3rem;
+  display: inline-flex;
+  flex-direction: row;
+}
+.image-update {
+  border: 1px solid #f0eadc;
+  border-radius: 5px;
+  height: 50vh;
+  display: inline-flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+.image-update img {
+  width: inherit;
+  height: 80%;
+  object-fit: contain;
+  padding: 1rem;
+}
+.product-details {
+  border: 1px solid #f0eadc;
+  border-radius: 5px;
+  height: inherit;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 2vw;
+  width: 100%;
+}
+
+.logout {
+  background-color: #332614ad;
+  width: 20%;
+  position: fixed;
+  z-index: 5;
+  top: 10vh;
+  display: none;
+  flex-direction: row;
+  border-radius: 5px;
+  padding: 1rem;
+  right: 2vw;
+}
