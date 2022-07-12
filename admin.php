@@ -2,6 +2,9 @@
 require_once("methods.php");
 session_start();
 
+
+
+
 ?>
 
 
@@ -103,7 +106,12 @@ session_start();
                                             <td><?php echo $user_id; ?></td>
                                             <td><?php echo $user_email; ?></td>
                                             <td><?php echo $user_name; ?></td>
-                                            <td><button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+                                            <td>
+                                                <form action="delete_user.php" method="post">
+                                                    <input class="cat_id" value="<?php echo $user_id; ?>" name="user_id">
+                                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
 
                                 <?php

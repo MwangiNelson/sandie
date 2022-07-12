@@ -42,6 +42,19 @@ function deleteData($product_id)
         return false;
     }
 }
+function deleteUser($user_id)
+{
+    $sql = "DELETE FROM tbl_users WHERE users_id = '" . $user_id . "' ";
+    $link = connect();
+    if (mysqli_query($link, $sql)) {
+        return true;
+    } else {
+        echo ("<script>
+			alert('Error '" . mysqli_error($link) . ");
+			</script>");
+        return false;
+    }
+}
 function getDat2($sql)
 {
     $link = connect();
