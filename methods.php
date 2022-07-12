@@ -8,7 +8,49 @@ function connect()
     $link = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Could not connect" . mysqli_connect_error());
     return ($link);
 }
-
+function getData($sql)
+{
+    $link = connect();
+    $result = mysqli_query($link, $sql);
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $rows = $row;
+        return $rows;
+    }
+}
+function setData($sql)
+{
+    $link = connect();
+    if (mysqli_query($link, $sql)) {
+        return true;
+    } else {
+        echo ("<script>
+			alert('Error '" . mysqli_error($link) . ");
+			</script>");
+        return false;
+    }
+}
+function deleteData($product_id)
+{
+    $sql = "DELETE FROM tbl_products WHERE product_id = '" . $product_id . "' ";
+    $link = connect();
+    if (mysqli_query($link, $sql)) {
+        return true;
+    } else {
+        echo ("<script>
+			alert('Error '" . mysqli_error($link) . ");
+			</script>");
+        return false;
+    }
+}
+function getDat2($sql)
+{
+    $link = connect();
+    $result = mysqli_query($link, $sql);
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
 function verifyUser($varEmail, $varPassword)
 {
     $dbserver = "localhost";
@@ -50,7 +92,8 @@ function verifyUser($varEmail, $varPassword)
 									</script>");
                         } elseif ($res2['role_name'] == 'User_ADMIN') {
                             echo ("<script>
-									alert('Admin Module still in construction');
+                            window.location.href='admin.php';
+									alert('Welcome Admin');
 									</script>");
                         }
                     }
@@ -74,24 +117,52 @@ function verifyUser($varEmail, $varPassword)
 			</script>';
     }
 }
-function getData($sql)
+function add_product($productName, $productQuantity, $productPrice, $productGender, $productImage)
 {
-    $link = connect();
-    $result = mysqli_query($link, $sql);
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        $rows = $row;
-        return $rows;
-    }
-}
-function setData($sql)
-{
-    $link = connect();
-    if (mysqli_query($link, $sql)) {
-        return true;
+
+    if (!empty($productPrice)) {
+        if (!empty($productImage)) {
+            if (!empty($productName)) {
+                if (!empty($productQuantity)) {
+                    if (!empty($productGender)) {
+                        $sql_stmt = "INSERT INTO tbl_products(product_name,product_quantity,product_price,product_gender,product_image) VALUES('" . $productName . "','" . $productQuantity . "','" . $productPrice . "','" . $productGender . "','" . $productImage . "')";
+                        $result = setData($sql_stmt);
+
+
+                        echo ("<script>
+                alert('Product Added successfully');
+                window.location.href='admin.php';
+                </script>");
+
+                        return $result;
+                    } else {
+                        echo ("<script>
+                alert('Error on gender input');
+                window.location.href='admin.php';
+                </script>");
+                    }
+                } else {
+                    echo ("<script>
+            alert('Error on quantity input');
+            window.location.href='admin.php';
+            </script>");
+                }
+            } else {
+                echo ("<script>
+        alert('Error on product name input');
+        window.location.href='admin.php';
+        </script>");
+            }
+        } else {
+            echo ("<script>
+    alert('Error on product image input');
+    window.location.href='admin.php';
+    </script>");
+        }
     } else {
         echo ("<script>
-			alert('Error '" . mysqli_error($link) . ");
-			</script>");
-        return false;
+        alert('Error on price input');
+        window.location.href='admin.php';
+        </script>");
     }
 }

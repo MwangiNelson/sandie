@@ -289,17 +289,23 @@ body {
 }
 
 .item-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #725229;
   width: fit-content;
   margin: 1rem;
+  height: fit-content;
   justify-self: center;
 }
 .img-sect {
   border-bottom: 1px solid #725229;
+  height: 50vh;
 }
 .img-sect img {
-  width: 250px;
-  object-fit: contain;
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
 }
 .item-details {
   background-color: white;
@@ -307,6 +313,7 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 1rem;
+  height: 30%;
 }
 .item-details button {
   width: 100%;
@@ -349,6 +356,8 @@ table {
   background-color: white;
   padding: 1rem;
   border: 1px solid #725229;
+  height: 75vh;
+  overflow-y: scroll;
 }
 .cart-products {
   width: 100%;
@@ -357,7 +366,7 @@ table {
   width: 30%;
   background-color: #725229;
   color: #f0eadc;
-  height: fit-content;
+  height: inherit;
   display: inline-flex;
   flex-direction: column;
   padding-block: 5rem;
@@ -555,7 +564,7 @@ table {
   color: #f0eadc;
   width: 100%;
 }
-.panel {
+.panel-main {
   width: 78%;
   background-color: rgba(0, 0, 0, 0.797);
   height: fit-content;
@@ -565,12 +574,28 @@ table {
   align-items: center;
   color: #f0eadc;
 }
+.panel {
+  width: 78%;
+  background-color: rgba(0, 0, 0, 0.797);
+  height: fit-content;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  color: #f0eadc;
+}
 .panel-actions {
   width: 100%;
   padding: 3rem;
   display: inline-flex;
   flex-direction: row;
+  height: fit-content;
 }
+
+.panel-actions table {
+  width: 100%;
+}
+
 .image-update {
   border: 1px solid #f0eadc;
   border-radius: 5px;
@@ -608,4 +633,41 @@ table {
   border-radius: 5px;
   padding: 1rem;
   right: 2vw;
+}
+.add-Prod-form {
+  width: 100%;
+  display: inline-flex;
+}
+.cat_id {
+  display: none;
+  position: fixed;
+}
+.user_head td {
+  padding-inline: 2rem;
+  padding-block: 2rem;
+}
+.user_head {
+  border-bottom: 1px solid #f0eadc;
+  position: sticky;
+  background-color: #14130f;
+  top: 0;
+}
+.user-row {
+  margin: 1px;
+}
+.user-row:hover {
+  background-color: #f0eadc9a;
+  border-radius: 5px;
+  color: #332614;
+}
+.user-row td {
+  padding: 2rem;
+}
+.user_tbl {
+  height: 60vh;
+  overflow-y: scroll;
+}
+.prod_img {
+  width: 100px;
+  object-fit: contain;
 }
